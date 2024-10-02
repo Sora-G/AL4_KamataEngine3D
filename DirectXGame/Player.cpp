@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "cassert"
+#include "MathUtilityForText.h"
 
 void Player::Initialize(Model* model, uint32_t textureHandle) {
 
@@ -12,12 +13,14 @@ void Player::Initialize(Model* model, uint32_t textureHandle) {
 
 	//ワールド変換の初期化
 	worldTransform_.Initialize();
-
+	
 	//シングルトンインスタンスを取得する
 	input_ = Input::GetInstance();
 }
 
 void Player::Update() {
+
+	worldTransform_.matWorld_ = MakeAffineMatrix(worldTransform_.scale_, worldTransform_.rotation_, worldTransform_.translation_);
 
 	//行列を定数バッファに転送
 	worldTransform_.TransferMatrix();
