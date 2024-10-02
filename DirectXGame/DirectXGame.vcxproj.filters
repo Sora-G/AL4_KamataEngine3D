@@ -55,6 +55,9 @@
     <Filter Include="Player">
       <UniqueIdentifier>{f33e96ba-18eb-441c-a3f4-b66cf8648c1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MathUtilityForText">
+      <UniqueIdentifier>{ce82a5cf-49e1-4a7e-b3ff-6f221eacf4a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MathUtilityForText.cpp">
+      <Filter>MathUtilityForText</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtilityForText.h">
+      <Filter>MathUtilityForText</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

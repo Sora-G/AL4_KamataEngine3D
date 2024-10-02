@@ -41,6 +41,9 @@ void Player::Update() {
 	} else if (input_->PushKey(DIK_DOWN)) {
 		move.y -= kCharacterSpd;
 	}
+
+	//座標移動（ベクトルの加算）
+	worldTransform_.translation_ += move;
 }
 
 void Player::Draw(ViewProjection& viewProjection) {
