@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "cassert"
 #include "MathUtilityForText.h"
+#include "imgui.h"
 
 void Player::Initialize(Model* model, uint32_t textureHandle) {
 
@@ -20,6 +21,7 @@ void Player::Initialize(Model* model, uint32_t textureHandle) {
 
 void Player::Update() {
 
+	//アフィン変換
 	worldTransform_.matWorld_ = MakeAffineMatrix(worldTransform_.scale_, worldTransform_.rotation_, worldTransform_.translation_);
 
 	//行列を定数バッファに転送
@@ -47,6 +49,13 @@ void Player::Update() {
 
 	//座標移動（ベクトルの加算）
 	worldTransform_.translation_ += move;
+
+	//キャラクターの座標を画面表示する処理
+	ImGui::Begin("window");
+
+	ImGui::DragFloat4("position", &worldTransform_.translation_.x, 0.1f);
+
+	ImGui::End();
 }
 
 void Player::Draw(ViewProjection& viewProjection) {
