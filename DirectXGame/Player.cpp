@@ -22,4 +22,6 @@ void Player::Update() {
 
 void Player::Draw(ViewProjection& viewProjection) {
 
+	//3Dモデルを描画
+	model_->Draw(worldTransform_, viewProjection, textureHandle_);
 }
