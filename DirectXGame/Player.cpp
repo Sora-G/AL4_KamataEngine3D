@@ -12,6 +12,9 @@ void Player::Initialize(Model* model, uint32_t textureHandle) {
 
 	//ワールド変換の初期化
 	worldTransform_.Initialize();
+
+	//シングルトンインスタンスを取得する
+	input_ = Input::GetInstance();
 }
 
 void Player::Update() {
