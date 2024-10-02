@@ -17,7 +17,7 @@ void GameScene::Initialize() {
 	audio_ = Audio::GetInstance();
 
 	//ファイル名を指定してテクスチャを読み込む
-	//textureHandle_ = TextureManager::Load("P3R.png");
+	textureHandle_ = TextureManager::Load("uvChecker.png");
 
 	//3Dモデルの読み込み
 	model_ = Model::Create();
@@ -28,7 +28,7 @@ void GameScene::Initialize() {
 	//自キャラの生成
 	player_ = new Player();
 	//自キャラの初期化
-	player_->Initialize();
+	player_->Initialize(model_, textureHandle_);
 }
 
 void GameScene::Update() {
