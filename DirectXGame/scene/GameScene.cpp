@@ -20,6 +20,9 @@ void GameScene::Initialize() {
 
 	//3Dモデルの読み込み
 	model_ = Model::Create();
+
+	//ビュープロジェクションの初期化
+	viewProjection_.Initialize();
 }
 
 void GameScene::Update() {}
