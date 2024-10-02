@@ -21,7 +21,7 @@ public:
 	/// <summary>
 	/// 描画処理
 	/// </summary>
-	void Draw();
+	void Draw(ViewProjection &viewProjection);
 
 
 private:
